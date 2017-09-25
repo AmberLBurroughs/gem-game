@@ -35,29 +35,35 @@ var gameState = {
     }
   },
 
-  // incriment wins by 1 
+  // encriment wins by 1 
+  // update page with winning data and text
+  // reset current agme
   markGameWin: function(){
     this.wins++;
     $("#wins").html("wins: " + this.wins);
     $("#win-lose").html("<h3>You win</h3>" + "<p>You correcting added your score to " + this.targetNumber + "</p>" + "<p>Play again.</p>");
     // console.log("wins " + this.wins);
-    this.gameReset();
+    this.reset();
   },
 
+   // encriment losses by 1 
+   // update page with loosing data and text
+   // reset current agme
   markGameLoss: function(){
     this.losses++;
     $("#losses").html("losses: " + this.losses);
     $("#win-lose").html("<h3>Uh Oh</h3>" + "<p>You could not correctly add your score to " + this.targetNumber + "</p>" + "<p>try again.</p>");
     // console.log("losses " + this.losses); 
-    this.gameReset();
+    this.reset();
   },
-
-  gameReset: function(){
-    // call function again, generate new num display new number
+  
+  // clear gem state 
+  reset: function(){
+    // generate new num and display new num
     gameState.targetNumber = randomNumberGenerate(19, 120);
     $("#number-to-guess").text(gameState.targetNumber);
     
-    // set resultnum to 0, display reset value
+    // set resultNum to 0, display reset value
     this.resultNumber = 0;
     $("#result").html("total: " + gameState.resultNumber);
 
@@ -74,11 +80,10 @@ function randomNumberGenerate(min, max){
   return Math.floor(Math.random()*(max-min+1)+ min);
 }
 
-// create gems and assign random value 
+// create gems 
 var gemsValue = {
   gems: [],
 
-  // until array equal 4, generate numbers and add to array, if not already in array, push to array. create seperate function for randomizing the array order.... call r
   // replace a randon index in gems with a 1. max is gem length (3)
   replaceOne : function(max) {
     //takes the gems array and selects a random index
@@ -88,7 +93,8 @@ var gemsValue = {
     this.gems.splice(gemNumIndex, 1, 1);
   },
 
-  // run randomNumbGenerate function at least 4 times. add those values to array.
+  // run randomNumbGenerate function at least 4 times.
+  // generate numbers and add to array, if not already in array, push to array.
   assignNumber : function(){
     // run until gems is length of 4
     while(this.gems.length < 4){
@@ -101,6 +107,7 @@ var gemsValue = {
     // console.log("gem array: " + this.gems);
     this.replaceOne(this.gems.length);
   },
+
   // assign each button a value from gems array
   assignValueToHtml : function(){
     // each  gem item === a button there are 4 buttons and 4 array items.
@@ -110,6 +117,7 @@ var gemsValue = {
     $('.btn3').val(this.gems[2]);
     $('.btn4').val(this.gems[3]);
   },
+
   assignButtonImage: function(){
     // remove all btn# classes
     $('button').each(function(index, value){
@@ -121,6 +129,7 @@ var gemsValue = {
       $(value).addClass(btnClasses[index]);
     });
   },
+
   shuffleArray: function(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -136,11 +145,9 @@ var gemsValue = {
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
-
     return array;
   },
 
-  randomizeButtonImages: function(){},
   //Function to reset data
   resetRandomValue : function() {
     this.gems = [];
@@ -153,8 +160,6 @@ var gemsValue = {
 
 // click to start the game
 $(document).ready(function(){
-  // $("#crystals").html(gameState.resultNumber);
-  // subject ot relocation 
   gameState.initializeGame();
   // if button (this) is clicked the value assigned is add to a counter array
   // bind function to click of buttons
