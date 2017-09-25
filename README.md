@@ -2,6 +2,7 @@
 An interactive game for web browsers that dynamically updates the HTML pages with the jQuery library.
 
 <img src="assets/images/poster.jpg?raw=true" >
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for grading and testing purposes.
