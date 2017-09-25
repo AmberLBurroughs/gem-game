@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+*:focus {
+  outline: none;
+}
+html, body {
+  max-height: 100%;
+  height: 100%;
+}
+body{
+  background-color: #E1DED8;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-family: 'Poiret One', cursive;
+}
+img {
+  height: 200px;
+}
+.wrapper {
+  background-color: #C2C2C2;
+  margin: 5%;
+  flex: 1 0 auto;
+}
+.content-container {
+  margin: 5%;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+button{
+  border: none;
+  background-color: transparent;
+  margin: 2%;
+  cursor: pointer;
+  height: 200px;
+}
+.btn1::before {
+  content: url("../images/gem-1.png");
+  height: 200px !important;
+}
+.btn2::before {
+  content: url("../images/gem-2.png");
+  height: 200px !important;
+}
+.btn3::before {
+  content: url("../images/gem-3.png");
+  height: 200px !important;
+}
+.btn4::before {
+  content: url("../images/gem-4.png");
+  height: 200px !important;
+}
+h1 {
+  margin-bottom: 5%;
+}
+.g-data {
+  display: inline-block;
+  padding: 5px 10px;
+}
+.g-data:first-of-type {
+  border-right: 1px solid #000;
+  padding-right: 15px;
+}
+.game-message {
+  height: 60px;
+  margin-top: 3%;
+}
+#win-lose p:first-of-type{
+  line-height: 2;
+}
