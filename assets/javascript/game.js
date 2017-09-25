@@ -18,7 +18,7 @@ var gameState = {
   // update resultNumber with clickValue
   updateResult: function(num){
     this.resultNumber += num;
-    $("#win-lose").html("");
+    $("#win-lose").hide().html("");
     // display resultNum on page
     $("#result").html("total: " + this.resultNumber);
 
@@ -41,7 +41,7 @@ var gameState = {
   markGameWin: function(){
     this.wins++;
     $("#wins").html("wins: " + this.wins);
-    $("#win-lose").html("<h3>You win</h3>" + "<p>You correcting added your score to " + this.targetNumber + "</p>" + "<p>Play again.</p>");
+    $("#win-lose").hide().html("<h3>You win</h3>" + "<p>You correcting added your score to " + this.targetNumber + "</p>" + "<p>Play again.</p>").fadeIn();
     // console.log("wins " + this.wins);
     this.reset();
   },
@@ -52,7 +52,7 @@ var gameState = {
   markGameLoss: function(){
     this.losses++;
     $("#losses").html("losses: " + this.losses);
-    $("#win-lose").html("<h3>Uh Oh</h3>" + "<p>You could not correctly add your score to " + this.targetNumber + "</p>" + "<p>try again.</p>");
+    $("#win-lose").hide().html("<h3>Uh Oh</h3>" + "<p>You could not correctly add your score to " + this.targetNumber + "</p>" + "<p>try again.</p>").fadeIn();
     // console.log("losses " + this.losses); 
     this.reset();
   },
