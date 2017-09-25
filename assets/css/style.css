@@ -18,6 +18,7 @@ body{
   flex-direction: column;
   text-transform: uppercase;
   font-family: 'Poiret One', cursive;
+  overflow-y: hidden;
 }
 img {
   height: 200px;
@@ -41,6 +42,9 @@ button{
   margin: 2%;
   cursor: pointer;
   height: 200px;
+}
+.btn-group {
+  margin: 0;
 }
 .btn1::before {
   content: url("../images/gem-1.png");
@@ -75,4 +79,15 @@ h1 {
 }
 #win-lose p:first-of-type{
   line-height: 2;
+}
+@media only screen and (max-width: 659.98px) {
+  body {
+    overflow-y: auto;
+  }
+  .btn-group {
+    margin: 5% 0;
+  }
+  .game-message {
+    min-height: 105px;
+  }
 }

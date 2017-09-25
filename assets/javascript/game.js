@@ -18,16 +18,14 @@ var gameState = {
   // update resultNumber with clickValue
   updateResult: function(num){
     this.resultNumber += num;
-
     $("#win-lose").html("");
-    // console.log("result number: " + this.resultNumber);
-    // display resultNum in page
+    // display resultNum on page
     $("#result").html("total: " + this.resultNumber);
-    // if target number is  === result number then win goes up by 1 
-    // display winning text on page
-    // if result number is greater than > target number than lose increases by 1
-    // display losing text on page
-  
+
+    // if targetNumber is  equal to resultNumber
+      // user loses game
+    // if resultNumber is greater than > targetNumber 
+      // user wins game
     if(this.resultNumber > this.targetNumber ){    
       this.markGameLoss();
     } else if(this.resultNumber === this.targetNumber) {
@@ -37,6 +35,7 @@ var gameState = {
     }
   },
 
+  // incriment wins by 1 
   markGameWin: function(){
     this.wins++;
     $("#wins").html("wins: " + this.wins);
