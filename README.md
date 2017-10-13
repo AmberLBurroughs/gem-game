@@ -5,7 +5,7 @@ An interactive game for web browsers that dynamically updates the HTML pages wit
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for grading and testing purposes.
+These instructions will get you a copy of the project up and running on your local machine for testing purposes.
 
 ### Installing
 
