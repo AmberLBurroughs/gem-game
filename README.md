@@ -1,5 +1,6 @@
 # Gem game 
 https://amberlburroughs.github.io/js-gems/
+
 An interactive game for web browsers that dynamically updates the HTML pages with the jQuery library.
 
 <img src="assets/images/poster.jpg?raw=true" >
